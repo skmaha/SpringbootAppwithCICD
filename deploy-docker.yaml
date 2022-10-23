@@ -21,8 +21,8 @@
         state: present
     - name: Start the container
       docker_container:
-        name: SpringbootTestApp
-        image: "sunil4356/SpringbootTestApp:{{DOCKER_TAG}}"
+        name: sbtestapp
+        image: "sunil4356/sbtestapp:{{DOCKER_TAG}}"
         state: started
         published_ports:
           - 0.0.0.0:8081:8080

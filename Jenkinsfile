@@ -23,7 +23,7 @@ pipeline{
         
         stage ('Docker Build'){
             steps{
-                sh 'docker build . -t sunil4356/SpringbootTestApp:${DOCKER_TAG} '
+                sh 'docker build . -t sunil4356/sbtestapp:${DOCKER_TAG} '
             }
         }
 
@@ -32,7 +32,7 @@ pipeline{
                 withCredentials([string(credentialsId: 'docker-hub', variable: 'dockerHubPwd')]) {
                     sh 'docker login -u sunil4356 -p ${dockerHubPwd}'
                 }
-                sh 'docker push sunil4356/SpringbootTestApp:${DOCKER_TAG}'
+                sh 'docker push sunil4356/sbtestapp:${DOCKER_TAG}'
             }
         }
         stage('Decker Deploy'){
