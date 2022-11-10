@@ -37,7 +37,7 @@ pipeline{
         }
         stage('Decker Deploy'){
             steps{
-                ansiblePlaybook credentialsId: 'test-server-azure', disableHostKeyChecking: true, extras: "-e DOCKER_TAG=${DOCKER_TAG}", installation: 'Ansible', inventory: 'test-server.inv', playbook: 'deploy-docker.yaml'
+                ansiblePlaybook credentialsId: 'test-server', disableHostKeyChecking: true, extras: "-e DOCKER_TAG=${DOCKER_TAG}", installation: 'Ansible', inventory: 'test-server.inv', playbook: 'deploy-docker.yaml'
             }
         }
     }
